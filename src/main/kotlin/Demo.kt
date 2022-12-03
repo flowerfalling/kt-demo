@@ -1,5 +1,13 @@
 fun main() {
-
+    demo("hello") {
+        println(it)
+    }
 }
 
-class Person(firstName: String) { /*……*/ }
+fun demo(str: String, func: (String) -> Unit) {
+    func(str)
+}
+
+fun show(str: String) {
+    println(str)
+}
