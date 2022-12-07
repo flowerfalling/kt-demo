@@ -1,12 +1,19 @@
 fun main() {
-    val data1 = Demo1(1)
-    val data2 = Demo1(1)
-    val demo1 = Demo()
-    val demo2 = Demo()
-    println(data1 == data2)
-    println(demo1 == demo2)
+    println(show(Demo.F4("demo")))
 }
 
-data class Demo1(var num: Int)
+fun show(demo: Demo): String =
+    when (demo) {
+        is Demo.F1 -> "fxxk"
+        is Demo.F2 -> "寄"
+        is Demo.F3 -> "ok"
+        is Demo.F4 -> "good, name is ${demo.name}"
+    }
 
-class Demo
+
+sealed class Demo {
+    object F1 : Demo()
+    object F2 : Demo()
+    object F3 : Demo()
+    class F4(val name: String) : Demo()
+}
