@@ -1,10 +1,8 @@
 fun main() {
-    var a = 1
-    val b = a.mLet {
-        println(it)
-        ++a
-    }
-    println(b)
+    123 go 1 go 2 go 3
 }
 
-private inline fun<I, O> I.mLet(lambda: (I) -> O) = lambda(this)
+private infix fun <C1, C2> C1.go(c2: C2): C1 {
+    println("$this, $c2")
+    return this
+}
