@@ -1,8 +1,20 @@
 fun main() {
-    123 go 1 go 2 go 3
+    val context = Context().apply5 {
+        toast("success")
+        toast(it)
+        toast(name)
+    }
+    println(context.info)
 }
 
-private infix fun <C1, C2> C1.go(c2: C2): C1 {
-    println("$this, $c2")
+class Context {
+    val info = "info"
+    val name = "demo"
+
+    fun toast(str: String) = println("toast: $str")
+}
+
+inline fun Context.apply5(lambda: Context.(String) -> Unit): Context {
+    lambda(info)
     return this
 }
