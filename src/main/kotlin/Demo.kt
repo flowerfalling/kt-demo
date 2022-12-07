@@ -1,19 +1,10 @@
 fun main() {
-    println(show(Demo.F4("demo")))
-}
-
-fun show(demo: Demo): String =
-    when (demo) {
-        is Demo.F1 -> "fxxk"
-        is Demo.F2 -> "寄"
-        is Demo.F3 -> "ok"
-        is Demo.F4 -> "good, name is ${demo.name}"
+    var a = 1
+    val b = a.mLet {
+        println(it)
+        ++a
     }
-
-
-sealed class Demo {
-    object F1 : Demo()
-    object F2 : Demo()
-    object F3 : Demo()
-    class F4(val name: String) : Demo()
+    println(b)
 }
+
+private inline fun<I, O> I.mLet(lambda: (I) -> O) = lambda(this)
