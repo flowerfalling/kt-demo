@@ -15,7 +15,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(kotlin("stdlib-jdk8"))
-    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.pytorch:pytorch_java_only:1.12.2")
 }
 
 tasks.test {
