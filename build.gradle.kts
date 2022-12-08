@@ -15,7 +15,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(kotlin("stdlib-jdk8"))
-    implementation("org.pytorch:pytorch_java_only:1.12.2")
+    implementation("org.tensorflow:tensorflow-core-platform:0.4.1")
 }
 
 tasks.test {
